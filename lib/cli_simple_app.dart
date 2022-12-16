@@ -1,10 +1,11 @@
 import 'dart:io';
 
-int calculate(int option, int? a, int? b) {
+//Calculates and returns (a *||%||+||- b)
+double calculate(int option, double? a, double? b) {
   if (option == 1) {
     return a! * b!;
   } else if (option == 2) {
-    return (a! ~/ b!);
+    return (a! / b!);
   } else if (option == 3) {
     return a! + b!;
   } else if (option == 4) {
@@ -14,7 +15,8 @@ int calculate(int option, int? a, int? b) {
   }
 }
 
-void answer(int a, int b, int c, int method) {
+//Graphically prints the answer to the CLI
+void showAnswer(double a, double b, double c, int method) {
   String d = '';
   if (method == 1) {
     d = 'X';
@@ -29,7 +31,7 @@ void answer(int a, int b, int c, int method) {
   stdout.writeln('              $a');
   stdout.writeln('           $d  $b');
   stdout.writeln('________________');
-  stdout.writeln('              $c');
+  stdout.writeln('              ${c.toStringAsFixed(2)}');
   stdout.writeln('****************');
 }
 
@@ -42,5 +44,5 @@ void menu() {
   stdout.writeln('4. Subtract 2 numbers');
   stdout.writeln('Type "exit" at any time to quit.');
   stdout.writeln('****************');
-  stdout.writeln('Input:');
+  stdout.write('Input: ');
 }

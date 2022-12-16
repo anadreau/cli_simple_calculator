@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:cli_simple_app/cli_simple_app.dart';
 
-int? a;
-int? b;
+double? a;
+double? b;
 int? method;
 
 enum ProcessStep { chooseMethod, inputA, inputB }
@@ -18,9 +18,10 @@ void main(List<String> arguments) {
     if (doLoopStep == ProcessStep.chooseMethod) {
       menu();
     } else if (doLoopStep == ProcessStep.inputA) {
-      stdout.writeln('Input first number');
+      stdout.write('Input first number: ');
     } else if (doLoopStep == ProcessStep.inputB) {
-      stdout.writeln('Input second number');
+      // stdout.writeln('Input second number');
+      stdout.write('Input second number: ');
     }
 
     final input = stdin.readLineSync();
@@ -47,12 +48,12 @@ void main(List<String> arguments) {
         doLoopStep = ProcessStep.inputA;
         continue;
       } else if (doLoopStep == ProcessStep.inputA) {
-        a = int.parse(input);
+        a = double.parse(input);
         doLoopStep = ProcessStep.inputB;
         continue;
       } else if (doLoopStep == ProcessStep.inputB) {
-        b = int.parse(input);
-        answer(a!, b!, calculate(method!, a, b), method!);
+        b = double.parse(input);
+        showAnswer(a!, b!, calculate(method!, a, b), method!);
         a = null;
         b = null;
         method = null;
