@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:cli_simple_app/cli_simple_app.dart';
+import 'package:cli_simple_app/cli_simple_calculator.dart';
 
 //Variables for input 1,2 and the method used in the calculation
 double? a;

@@ -1,4 +1,4 @@
-import 'package:cli_simple_app/cli_simple_app.dart';
+import 'package:cli_simple_app/cli_simple_calculator.dart';
 import 'package:test/test.dart';
 
 void main() {
